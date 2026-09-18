@@ -216,7 +216,20 @@
  .selection-page .selection-back{margin-bottom:20px}
  .selection-heading{margin-bottom:24px}
  .connection-choice{padding:17px 14px;gap:12px;align-items:center}
- .configuration-heading h1{font-size:20px;line-height:28px}
+.configuration-heading h1{font-size:20px;line-height:28px}
+}
+
+/* Compare connection methods side by side when the content area has room. */
+.selection-page{container-type:inline-size;container-name:connection-selection}
+.connection-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.connection-choice{position:relative;min-width:0;min-height:184px;flex-direction:column;align-items:flex-start;gap:18px;padding:20px}
+.connection-choice-copy{width:100%}
+.connection-choice>.eva-icon{position:absolute;top:29px;right:20px}
+@container connection-selection (max-width:539px){
+ .connection-choices{grid-template-columns:minmax(0,1fr);gap:14px}
+ .connection-choice{min-height:0;flex-direction:row;align-items:center;gap:14px;padding:18px}
+ .connection-choice-copy{width:auto}
+ .connection-choice>.eva-icon{position:static;flex:none;margin-left:auto}
 }
 
 </style>
